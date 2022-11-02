@@ -1,1 +1,23 @@
-{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{},"additionalProperties":false}
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "malithjayasinghe": {
+      "type": "object",
+      "properties": {
+        "httpsgithubcommalith1980architecture_mind_meld_2": {
+          "type": "object",
+          "properties": {
+            "token": {
+              "type": "string",
+              "description": ""
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
