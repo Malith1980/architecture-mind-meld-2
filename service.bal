@@ -1,6 +1,8 @@
 import ballerinax/github;
 import ballerina/http;
 
+configurable string token = "?";
+
 type  Repo record {
     int stars;
     string reponame;
@@ -8,7 +10,7 @@ type  Repo record {
 
 github:Client githubEp = check new (config = {
     auth: {
-        token: "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"
+        token: token
     }
 });
 
@@ -16,10 +18,10 @@ github:Client githubEp = check new (config = {
 # bound to port `9090`.
 service / on new http:Listener(9090) {
 
-    # A resource for generating greetings
+    # A resource for getting github repo starts
     # + name - the input string name
     # + return - string name with hello message or error
-
+    
     resource function get reposistories(string name) returns Repo[]| error {
            stream<github:Repository, github:Error?> repositories = check githubEp->getRepositories();
             Repo [] | error? repos = from var item in repositories
